@@ -7,7 +7,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh ' docker build -t test:v1 .'
+                sh ' docker build -t tomcat:works .'
             }
         }
         stage('login to dockerhub') {
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh ' docker push silpachalla/docker-repsitory:v1'
+                sh ' docker push tomcat:works'
             }
         }
 }

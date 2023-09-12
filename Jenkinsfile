@@ -7,7 +7,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh ' docker build -t sabair0509/sampleapp:$BUILD_NUMBER .'
+                sh ' docker build -t test:v1 .'
             }
         }
         stage('login to dockerhub') {
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh ' docker push sabair0509/sampleapp:$BUILD_NUMBER'
+                sh ' docker push silpachalla/docker-repsitory:v1'
             }
         }
 }
